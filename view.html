@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guestbook</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .signature {
+            background: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Guestbook</h1>
+    <div class="info">
+        {{.SignatureCount}} total signatures –
+        <a href="/guestbook/new">Add Your Signature</a>
+    </div>
+    <div>
+        {{range .Signatures}}
+        <div class="signature">{{.}}</div>
+        {{end}}
+    </div>
+</div>
+</body>
+</html>
